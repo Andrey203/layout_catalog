@@ -5,17 +5,25 @@
   border-radius: 5px;
 
   &__img-wrap {
-    margin-top: 15px;
     display: flex;
     justify-content: center;
+
+    margin-top: 15px;
+    margin-bottom: 45px;
+    cursor: pointer;
+
+    transition: transform 400ms ease;
+  }
+
+  &__img-wrap:hover {
+    margin: -2px 2px 56px;
+    border: 3px solid #f3f3f3;
+    transform: scale(1.2);
   }
 
   &__img {
     width: 160px;
     height: 134px;
-  }
-  &__description {
-    margin-top: 45px;
   }
 
   &__description-text {
@@ -67,6 +75,7 @@
     font-size: 14px;
     font-weight: 700;
     border: 1px solid $button-color;
+    transition: color 400ms ease, background-color 400ms ease;
   }
 
   &__buy-button:hover {
