@@ -37,27 +37,41 @@
   &__link {
     text-decoration: none;
     color: #000;
+    transition: color 400ms ease;
+
+    &--active,
+    &:hover {
+      color: $hover-link-color;
+    }
+
+    @mixin activeLink {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: "";
+      height: 4px;
+      border-radius: 8px;
+    }
+
+    &::after {
+      @include activeLink();
+      background-color: transparent;
+      transition: background-color 400ms ease;
+    }
+
+    &--active::after {
+      @include activeLink();
+      background-color: $hover-link-color;
+    }
+
+    &:active::after {
+      background-color: $hover-link-color;
+    }
   }
 }
 
 .logo-icon {
   @include logo-square($logo-size);
-}
-
-.is-active,
-.nav__link:hover {
-  color: $hover-link-color;
-}
-
-.is-active::after,
-.nav__link:active::after {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  content: "";
-  height: 4px;
-  border-radius: 8px;
-  background-color: $hover-link-color;
 }
