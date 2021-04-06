@@ -4,20 +4,16 @@
 
 .product-list {
   padding: 0 40px;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
 
   &__content {
     max-width: 944px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  &__content > :not(:nth-child(4n+1)) {
-    margin-left: 48px;
-  }
-
-  &__card {
-    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 48px;
+    grid-row-gap: 50px;
   }
 }
