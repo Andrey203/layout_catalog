@@ -4,8 +4,9 @@
   right: 0;
   padding: 0 50px;
   height: $header-height;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  justify-items: end;
   align-items: center;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -15,7 +16,7 @@
 
 .nav {
   height: 100%;
-  display: flex;
+  display: grid;
   text-transform: uppercase;
 
   &__list {
